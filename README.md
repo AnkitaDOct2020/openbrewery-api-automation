@@ -1,5 +1,17 @@
 # Open Brewery API Automation
 
+## API Used
+
+Open Brewery DB API
+
+Base URL:
+https://api.openbrewerydb.org/v1/breweries
+
+### Endpoints used:
+
+- GET /v1/breweries → Get all breweries
+- GET /v1/breweries?by_city={city} → Filter breweries by city
+
 API automation framework built using Java, REST Assured, TestNG, and Maven.
 
 ## Tech Stack
@@ -16,8 +28,12 @@ API automation framework built using Java, REST Assured, TestNG, and Maven.
 ```text
 src/test/java
 │
+├── base
+│   └── BaseTest.java
 ├── tests
 │   └── BreweryApiTests.java
+├── utils
+│   └── ConfigReader.java
 ```
 
 ---
