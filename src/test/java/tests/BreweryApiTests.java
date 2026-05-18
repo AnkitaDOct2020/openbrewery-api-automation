@@ -1,5 +1,6 @@
 package tests;
 
+import base.BaseTest;
 import io.restassured.RestAssured;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -7,9 +8,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class BreweryApiTests {
-
-    String baseUrl = "https://api.openbrewerydb.org/v1/breweries";
+public class BreweryApiTests extends BaseTest {
 
     // 1. Test: Get all breweries
     @Test
@@ -18,7 +17,7 @@ public class BreweryApiTests {
         int statusCode =
                 given()
                 .when()
-                    .get(baseUrl)
+                    .get(BASE_URL)
                 .then()
                     .extract().statusCode();
 
@@ -42,7 +41,7 @@ public class BreweryApiTests {
                 given()
                     .queryParam("by_city", city)
                 .when()
-                    .get(baseUrl)
+                    .get(BASE_URL)
                 .then()
                     .extract().statusCode();
 
@@ -57,7 +56,7 @@ public class BreweryApiTests {
                 given()
                     .queryParam("by_city", "san_diego")
                 .when()
-                    .get(baseUrl)
+                    .get(BASE_URL)
                 .then()
                     .extract()
                     .jsonPath().getList("$").size();
@@ -73,7 +72,7 @@ public class BreweryApiTests {
                 given()
                     .queryParam("by_city", "invalid_city_xyz")
                 .when()
-                    .get(baseUrl)
+                    .get(BASE_URL)
                 .then()
                     .extract()
                     .jsonPath().getList("$").size();
