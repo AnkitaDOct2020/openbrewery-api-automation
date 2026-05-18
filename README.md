@@ -51,17 +51,22 @@ src/test/java
 
 ## Validation Strategy
 
+The following validations were implemented in this framework:
+
 ### 1. Status Code Validation
-Ensures API is reachable and responding successfully.
+Ensures that all API endpoints return expected HTTP status codes (e.g., 200 OK), confirming successful request execution.
 
 ### 2. Response Body Validation
-Ensures API returns meaningful and expected data.
+Validates that the API response contains meaningful data and matches expected structure (e.g., list of breweries is returned).
 
-### 3. Negative Testing
-Ensures invalid inputs are handled gracefully.
+### 3. Data Validation
+Ensures query-based filtering works correctly (e.g., breweries filtered by city return relevant results or empty list for invalid input).
 
-### 4. Data-Driven Testing
-Implemented using TestNG DataProvider to reduce duplicate code and improve scalability.
+### 4. Negative Testing
+Verifies system behavior for invalid inputs such as incorrect city names, ensuring graceful handling instead of failures.
+
+### 5. Data-Driven Testing
+Implemented using TestNG DataProvider to test multiple input sets (cities) without code duplication, improving scalability and maintainability.
 
 ---
 
