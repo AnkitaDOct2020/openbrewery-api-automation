@@ -12,6 +12,12 @@ https://api.openbrewerydb.org/v1/breweries
 - GET /v1/breweries → Get all breweries
 - GET /v1/breweries?by_city={city} → Filter breweries by city
 
+## Test Execution
+
+Below GIF shows test execution:
+![OpenBrewery Test Execution](https://github.com/user-attachments/assets/3e5b6bd4-e45d-45da-8daa-1b3dea737da6)
+
+
 API automation framework built using Java, REST Assured, TestNG, and Maven.
 
 ## Tech Stack
